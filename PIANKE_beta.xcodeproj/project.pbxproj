@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4658AA341C86D0B200F19DF0 /* SingleTon.m in Sources */ = {isa = PBXBuildFile; fileRef = 4658AA331C86D0B200F19DF0 /* SingleTon.m */; };
 		46C237831C86B02700204CB9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C237821C86B02700204CB9 /* main.m */; };
 		46C237861C86B02700204CB9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C237851C86B02700204CB9 /* AppDelegate.m */; };
 		46C2378E1C86B02700204CB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46C2378D1C86B02700204CB9 /* Assets.xcassets */; };
@@ -101,8 +100,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4658AA321C86D0B200F19DF0 /* SingleTon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleTon.h; sourceTree = "<group>"; };
-		4658AA331C86D0B200F19DF0 /* SingleTon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleTon.m; sourceTree = "<group>"; };
 		46C2377E1C86B02700204CB9 /* PIANKE_beta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PIANKE_beta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46C237821C86B02700204CB9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		46C237841C86B02700204CB9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -354,8 +351,6 @@
 			children = (
 				46C238B31C86B63A00204CB9 /* Karl_NavVC.h */,
 				46C238B41C86B63A00204CB9 /* Karl_NavVC.m */,
-				4658AA321C86D0B200F19DF0 /* SingleTon.h */,
-				4658AA331C86D0B200F19DF0 /* SingleTon.m */,
 			);
 			name = "基类";
 			path = "PIANKE_beta/基类";
@@ -858,7 +853,6 @@
 				46C2389B1C86B2FE00204CB9 /* UIScrollView+MJRefresh.m in Sources */,
 				46C238721C86B2FE00204CB9 /* AFSecurityPolicy.m in Sources */,
 				46C2387A1C86B2FE00204CB9 /* MASLayoutConstraint.m in Sources */,
-				4658AA341C86D0B200F19DF0 /* SingleTon.m in Sources */,
 				46C237AF1C86B1EE00204CB9 /* LoginView.m in Sources */,
 				46C2386A1C86B2FE00204CB9 /* HttpTool.m in Sources */,
 				46C238AC1C86B2FE00204CB9 /* UIView+WebCacheOperation.m in Sources */,

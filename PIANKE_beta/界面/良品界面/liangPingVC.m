@@ -14,6 +14,7 @@
 #import "HttpRequestMacro.h"
 #import "GoodProductsRootModel.h"
 #import "GoodProductsTableViewCell.h"
+#import "DIYMJRefresh.h"
 
 @interface liangPingVC ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -26,6 +27,7 @@
 //每次请求数据的个数
 @property (assign, nonatomic) NSUInteger limitNum;
 
+@property (assign, nonatomic) NSUInteger startPoint;
 @end
 
 @implementation liangPingVC
@@ -40,6 +42,8 @@
     if (self) {
         [self.view addSubview:self.tableView];
         self.dataSourceArr = [NSMutableArray array];
+        self.startPoint = 10;
+        self.limitNum   = 20;
     }
     return self;
 }
@@ -70,7 +74,9 @@
     [self sendHttpRequest];
     
 //    显示LoadingView(网络请求完成后消失)
-    [LoadingView showKarlLoadingViewFromSuperView:self.view];
+    [LoadingView showKarlLoadingViewFromSuperView:self.tableView];
+    
+    [self addRefreshControl];
     
 }
 
@@ -114,7 +120,7 @@
     
     NSDictionary *paramDic = @{
                                @"start" : @0,   //从第几条数据开始获取
-                               @"limit" : @10,  //一次性获取多少条数据
+                               @"limit" : @5,  //一次性获取多少条数据
                                @"client" : @2   //服务器配置代码
                                };
     
@@ -123,7 +129,7 @@
                   success:^(id JSON) {
                       
                       GoodProductsRootModel *rootModel = [[GoodProductsRootModel alloc]initWithDictionary:JSON];
-            
+                      [[self.tableView header] endRefreshing];
                       NSLog(@"Success");
 //                      表格数据
                       self.dataSourceArr = [[NSMutableArray alloc] initWithArray:rootModel.data.list];
@@ -132,13 +138,33 @@
                       
                       [self.tableView reloadData];
 //                      网络请求后，loadingView消失
-                      [LoadingView removeKarlLoadingViewFromSuperView:self.view];
+                      [LoadingView removeKarlLoadingViewFromSuperView:self.tableView];
                   } failure:^(NSError *error) {
                       NSLog(@"");
-                      [LoadingView removeKarlLoadingViewFromSuperView:self.view];
+                      [LoadingView removeKarlLoadingViewFromSuperView:self.tableView];
                   }];
 }
 
+
+-(void)addRefreshControl{
+    
+//    添加夏利刷新和上拉提取
+    DIYMJRefreshGifHeader *gifHeader = [DIYMJRefreshGifHeader headerWithRefreshingBlock:^{
+        
+        [self sendHttpRequest];
+        
+    }];
+    self.tableView.header = gifHeader;
+    
+    DIYMJRefreshBackGifFooter *gifFooter = [DIYMJRefreshBackGifFooter footerWithRefreshingBlock:^{
+        ;
+    }];
+    self.tableView.footer = gifFooter;
+    
+    
+    
+
+}
 
 #pragma mark -
 #pragma mark - 自定义方法
@@ -155,7 +181,7 @@
 -(UITableView *)tableView{
     
     if (!_tableView) {
-        _tableView = [[UITableView alloc] init];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.backgroundColor = [UIColor whiteColor];

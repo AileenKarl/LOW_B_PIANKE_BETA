@@ -20,6 +20,7 @@
     
     //    导航条样式
     UINavigationBar *bar = [UINavigationBar appearance];
+    bar.translucent = NO;
     [bar setBarTintColor:[UIColor colorWithHexString:@"#303030"]];
     [bar setTintColor:[UIColor whiteColor]];
     [bar setTitleTextAttributes:@{
