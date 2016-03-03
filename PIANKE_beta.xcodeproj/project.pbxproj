@@ -97,6 +97,7 @@
 		46FB11461C87CFF400D9D5A9 /* GoodProductsDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FB11451C87CFF400D9D5A9 /* GoodProductsDataModel.m */; };
 		46FB11491C87D0AC00D9D5A9 /* GoodProductsListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FB11481C87D0AC00D9D5A9 /* GoodProductsListModel.m */; };
 		46FB114C1C87E22100D9D5A9 /* GoodProductsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FB114B1C87E22100D9D5A9 /* GoodProductsTableViewCell.m */; };
+		46FB11501C8823F900D9D5A9 /* BuyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FB114F1C8823F900D9D5A9 /* BuyVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -292,6 +293,8 @@
 		46FB11481C87D0AC00D9D5A9 /* GoodProductsListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodProductsListModel.m; sourceTree = "<group>"; };
 		46FB114A1C87E22100D9D5A9 /* GoodProductsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodProductsTableViewCell.h; sourceTree = "<group>"; };
 		46FB114B1C87E22100D9D5A9 /* GoodProductsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodProductsTableViewCell.m; sourceTree = "<group>"; };
+		46FB114E1C8823F900D9D5A9 /* BuyVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyVC.h; sourceTree = "<group>"; };
+		46FB114F1C8823F900D9D5A9 /* BuyVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -405,6 +408,7 @@
 		46C2379D1C86B15100204CB9 /* 良品界面 */ = {
 			isa = PBXGroup;
 			children = (
+				46FB114D1C8823E200D9D5A9 /* 购买界面 */,
 				46FB11401C87CF1B00D9D5A9 /* Model */,
 				46C238B01C86B42900204CB9 /* liangPingVC.h */,
 				46C238B11C86B42900204CB9 /* liangPingVC.m */,
@@ -740,6 +744,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		46FB114D1C8823E200D9D5A9 /* 购买界面 */ = {
+			isa = PBXGroup;
+			children = (
+				46FB114E1C8823F900D9D5A9 /* BuyVC.h */,
+				46FB114F1C8823F900D9D5A9 /* BuyVC.m */,
+			);
+			path = "购买界面";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -853,6 +866,7 @@
 				46C2389B1C86B2FE00204CB9 /* UIScrollView+MJRefresh.m in Sources */,
 				46C238721C86B2FE00204CB9 /* AFSecurityPolicy.m in Sources */,
 				46C2387A1C86B2FE00204CB9 /* MASLayoutConstraint.m in Sources */,
+				46FB11501C8823F900D9D5A9 /* BuyVC.m in Sources */,
 				46C237AF1C86B1EE00204CB9 /* LoginView.m in Sources */,
 				46C2386A1C86B2FE00204CB9 /* HttpTool.m in Sources */,
 				46C238AC1C86B2FE00204CB9 /* UIView+WebCacheOperation.m in Sources */,

@@ -15,6 +15,7 @@
 @property (strong, nonatomic) UIImageView *coverimgView;
 @property (strong, nonatomic) UILabel *titleLab;
 @property (strong, nonatomic) UIButton *buyBtn;
+@property (copy, nonatomic) NSString *urlStr;
 
 -(void)loadingDataWithModel:(GoodProductsListModel *)listModel;
 

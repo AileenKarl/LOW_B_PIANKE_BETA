@@ -54,10 +54,10 @@
 +(void)showKarlLoadingViewFromSuperView:(UIView *)superView offset:(CGFloat)offsetY{
     
     LoadingView *karlLoadingView = [[LoadingView alloc] init];
-    karlLoadingView.frame = CGRectMake( [UIScreen mainScreen].bounds.size.width/2 - 40,
-                                        [UIScreen mainScreen].bounds.size.height/2- 40 + offsetY,
-                                        60,
-                                        80);
+    karlLoadingView.frame = CGRectMake( [UIScreen mainScreen].bounds.size.width/2 - 60,
+                                        [UIScreen mainScreen].bounds.size.height/2- 80 + offsetY,
+                                        120,
+                                        160);
     
 
     
@@ -115,7 +115,7 @@
     if (!_loadingView) {
         
         _loadingView                      = [[UIImageView alloc] init];
-        _loadingView.frame                = CGRectMake(0, 0, 60, 60);
+        _loadingView.frame                = CGRectMake(0, 0, 120, 120);
         _loadingView.backgroundColor      = [UIColor clearColor];
         _loadingView.animationImages      = [self getImageArr];
         _loadingView.animationDuration    = 2.0;
@@ -131,9 +131,9 @@
     if (!_toastLabel) {
         
         _toastLabel = [[UILabel alloc] init];
-        _toastLabel.frame = CGRectMake(0, 60, 60, 30);
-        _toastLabel.text = @"片刻即来";
-        _toastLabel.font = [UIFont systemFontOfSize:10];
+        _toastLabel.frame = CGRectMake(10, 120, 120, 30);
+        _toastLabel.text = @"...片刻即来...";
+        _toastLabel.font = [UIFont systemFontOfSize:16];
         _toastLabel.backgroundColor = [UIColor clearColor];
         
     }

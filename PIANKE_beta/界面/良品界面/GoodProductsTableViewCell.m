@@ -7,6 +7,8 @@
 //
 
 #import "GoodProductsTableViewCell.h"
+#import "BuyVC.h"
+
 
 @implementation GoodProductsTableViewCell
 
@@ -20,17 +22,36 @@
         [self.contentView addSubview:self.titleLab];
         [self.contentView addSubview:self.buyBtn];
         
+        
+        ///定义在cell内部的购买界面跳转操作关联
+//        [self.buyBtn addTarget:self
+//                        action:@selector(changeToBuyView)
+//              forControlEvents:UIControlEventTouchUpInside];
+        
     }
     
     return self;
 }
+
+///定义在cell内部的购买界面跳转操作方法
+-(void)changeToBuyView{
+    
+    BuyVC *buyView = [[BuyVC alloc] init];
+    buyView.urlString = self.urlStr;
+    UINavigationController *nav = (UINavigationController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+    
+    [nav pushViewController:buyView
+                   animated:YES];
+    
+}
+
 
 -(void)loadingDataWithModel:(GoodProductsListModel *)listModel{
     
     [_coverimgView  downloadImage:listModel.coverimg
                             place:[UIImage imageNamed:@"defaultCover"]];
     [_titleLab setText:listModel.title];
-    
+    _urlStr = listModel.buyurl;
 }
 
 -(UIImageView *)coverimgView{
@@ -72,6 +93,7 @@
     
     return _buyBtn;
 }
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

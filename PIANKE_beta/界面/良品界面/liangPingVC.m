@@ -15,6 +15,7 @@
 #import "GoodProductsRootModel.h"
 #import "GoodProductsTableViewCell.h"
 #import "DIYMJRefresh.h"
+#import "BuyVC.h"
 
 @interface liangPingVC ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -27,7 +28,9 @@
 //每次请求数据的个数
 @property (assign, nonatomic) NSUInteger limitNum;
 
-@property (assign, nonatomic) NSUInteger startPoint;
+
+@property (strong, nonatomic) NSMutableArray *buyUrlArr;
+
 @end
 
 @implementation liangPingVC
@@ -42,7 +45,6 @@
     if (self) {
         [self.view addSubview:self.tableView];
         self.dataSourceArr = [NSMutableArray array];
-        self.startPoint = 10;
         self.limitNum   = 20;
     }
     return self;
@@ -53,6 +55,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.buyUrlArr = [NSMutableArray array];
     
     [self.view addSubview:self.tableView];
     
@@ -104,6 +107,15 @@
     }
     
     [cell loadingDataWithModel:[self.dataSourceArr objectAtIndex:indexPath.row]];
+    cell.buyBtn.tag = indexPath.row;
+    NSLog(@"%ld",cell.buyBtn.tag);
+    [self.buyUrlArr addObject:cell.urlStr];
+    
+    ///定义在VC中的购买界面跳转操作
+    [cell.buyBtn addTarget:self
+                    action:@selector(changeToBuyView:)
+          forControlEvents:UIControlEventTouchUpInside];
+    
     return cell;
 }
 
@@ -133,7 +145,8 @@
                       NSLog(@"Success");
 //                      表格数据
                       self.dataSourceArr = [[NSMutableArray alloc] initWithArray:rootModel.data.list];
-//                      刷新表格
+                      
+                      //                      刷新表格
                       NSLog(@"%@",self.dataSourceArr);
                       
                       [self.tableView reloadData];
@@ -160,9 +173,6 @@
         ;
     }];
     self.tableView.footer = gifFooter;
-    
-    
-    
 
 }
 
@@ -172,6 +182,21 @@
 -(void)openSideMenuMethod{
     
     [SettingVC opensSideMenuFromMenu:self.view.window];
+    
+}
+
+
+///定义在VC中的购买界面跳转操作方法
+-(void)changeToBuyView:(UIButton *)btn{
+    
+    BuyVC *buyView = [[BuyVC alloc] init];
+    
+    buyView.urlString = [self.buyUrlArr objectAtIndex:btn.tag];
+    
+    NSLog(@"网址编号%ld",btn.tag);
+    
+    [self.navigationController pushViewController:buyView
+                                         animated:YES];
     
 }
 
