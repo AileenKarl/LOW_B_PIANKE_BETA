@@ -16,6 +16,9 @@
 #import "GoodProductsTableViewCell.h"
 #import "DIYMJRefresh.h"
 #import "BuyVC.h"
+#import "DetailVC.h"
+#import "NSString+ChangeHtmlString.h"
+
 
 @interface liangPingVC ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -31,6 +34,9 @@
 
 @property (strong, nonatomic) NSMutableArray *buyUrlArr;
 
+//良品id
+@property (strong, nonatomic) NSMutableArray *idArr;
+
 @end
 
 @implementation liangPingVC
@@ -43,9 +49,11 @@
 {
     self = [super init];
     if (self) {
+        
         [self.view addSubview:self.tableView];
         self.dataSourceArr = [NSMutableArray array];
         self.limitNum   = 20;
+        
     }
     return self;
 }
@@ -56,7 +64,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.buyUrlArr = [NSMutableArray array];
-    
+    self.idArr = [NSMutableArray array];
+
     [self.view addSubview:self.tableView];
     
     [self.view setBackgroundColor: [UIColor groupTableViewBackgroundColor]];
@@ -125,6 +134,21 @@
     
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+//获取当前商品的contentid
+    NSString *selectProductId = [self.idArr objectAtIndex:indexPath.row];
+//在这里进入详情界面
+
+    DetailVC *detailView = [[DetailVC alloc] init];
+    
+    [detailView initWithId:selectProductId];
+    
+    [self.navigationController pushViewController:detailView
+                                         animated:YES];
+    
+}
+
 #pragma mark -
 #pragma mark - 调用方法
 
@@ -132,7 +156,7 @@
     
     NSDictionary *paramDic = @{
                                @"start" : @0,   //从第几条数据开始获取
-                               @"limit" : @5,  //一次性获取多少条数据
+                               @"limit" : @10,  //一次性获取多少条数据
                                @"client" : @2   //服务器配置代码
                                };
     
@@ -145,7 +169,13 @@
                       NSLog(@"Success");
 //                      表格数据
                       self.dataSourceArr = [[NSMutableArray alloc] initWithArray:rootModel.data.list];
-                      
+//                      获取良品id数据
+                      for (GoodProductsListModel *tempModel in rootModel.data.list) {
+                          
+                          NSString *contentid = tempModel.contentid;
+                          [self.idArr addObject:contentid];
+                          
+                      }
                       //                      刷新表格
                       NSLog(@"%@",self.dataSourceArr);
                       

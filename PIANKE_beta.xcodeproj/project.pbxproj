@@ -98,6 +98,10 @@
 		46FB11491C87D0AC00D9D5A9 /* GoodProductsListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FB11481C87D0AC00D9D5A9 /* GoodProductsListModel.m */; };
 		46FB114C1C87E22100D9D5A9 /* GoodProductsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FB114B1C87E22100D9D5A9 /* GoodProductsTableViewCell.m */; };
 		46FB11501C8823F900D9D5A9 /* BuyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FB114F1C8823F900D9D5A9 /* BuyVC.m */; };
+		46FBBA711C89162F008FC71B /* NSString+ChangeHtmlString.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FBBA701C89162F008FC71B /* NSString+ChangeHtmlString.m */; };
+		46FBBA751C89188D008FC71B /* DetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FBBA741C89188D008FC71B /* DetailVC.m */; };
+		46FBBA7D1C8937FA008FC71B /* HeaderViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FBBA7C1C8937F9008FC71B /* HeaderViewModel.m */; };
+		46FBBA831C8947E4008FC71B /* DetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FBBA821C8947E4008FC71B /* DetailHeaderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -295,6 +299,14 @@
 		46FB114B1C87E22100D9D5A9 /* GoodProductsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodProductsTableViewCell.m; sourceTree = "<group>"; };
 		46FB114E1C8823F900D9D5A9 /* BuyVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyVC.h; sourceTree = "<group>"; };
 		46FB114F1C8823F900D9D5A9 /* BuyVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyVC.m; sourceTree = "<group>"; };
+		46FBBA6F1C89162F008FC71B /* NSString+ChangeHtmlString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ChangeHtmlString.h"; sourceTree = "<group>"; };
+		46FBBA701C89162F008FC71B /* NSString+ChangeHtmlString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ChangeHtmlString.m"; sourceTree = "<group>"; };
+		46FBBA731C89188D008FC71B /* DetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailVC.h; sourceTree = "<group>"; };
+		46FBBA741C89188D008FC71B /* DetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailVC.m; sourceTree = "<group>"; };
+		46FBBA7B1C8937F9008FC71B /* HeaderViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderViewModel.h; sourceTree = "<group>"; };
+		46FBBA7C1C8937F9008FC71B /* HeaderViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderViewModel.m; sourceTree = "<group>"; };
+		46FBBA811C8947E4008FC71B /* DetailHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailHeaderView.h; sourceTree = "<group>"; };
+		46FBBA821C8947E4008FC71B /* DetailHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailHeaderView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -408,6 +420,7 @@
 		46C2379D1C86B15100204CB9 /* 良品界面 */ = {
 			isa = PBXGroup;
 			children = (
+				46FBBA721C89186F008FC71B /* 详情界面 */,
 				46FB114D1C8823E200D9D5A9 /* 购买界面 */,
 				46FB11401C87CF1B00D9D5A9 /* Model */,
 				46C238B01C86B42900204CB9 /* liangPingVC.h */,
@@ -450,6 +463,8 @@
 		46C237C21C86B2FE00204CB9 /* 帮助文件 */ = {
 			isa = PBXGroup;
 			children = (
+				46FBBA6F1C89162F008FC71B /* NSString+ChangeHtmlString.h */,
+				46FBBA701C89162F008FC71B /* NSString+ChangeHtmlString.m */,
 				46FB113D1C87CA2700D9D5A9 /* LoadingView.h */,
 				46FB113E1C87CA2700D9D5A9 /* LoadingView.m */,
 				46FB113A1C87C68A00D9D5A9 /* UIImageView+SDWedImage.h */,
@@ -753,6 +768,37 @@
 			path = "购买界面";
 			sourceTree = "<group>";
 		};
+		46FBBA721C89186F008FC71B /* 详情界面 */ = {
+			isa = PBXGroup;
+			children = (
+				46FBBA761C893731008FC71B /* DetailHeaderView */,
+				46FBBA731C89188D008FC71B /* DetailVC.h */,
+				46FBBA741C89188D008FC71B /* DetailVC.m */,
+			);
+			path = "详情界面";
+			sourceTree = "<group>";
+		};
+		46FBBA761C893731008FC71B /* DetailHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				46FBBA7A1C8937E9008FC71B /* DetailHeaderViewModel */,
+				46FBBA811C8947E4008FC71B /* DetailHeaderView.h */,
+				46FBBA821C8947E4008FC71B /* DetailHeaderView.m */,
+			);
+			name = DetailHeaderView;
+			path = HeaderView;
+			sourceTree = "<group>";
+		};
+		46FBBA7A1C8937E9008FC71B /* DetailHeaderViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				46FBBA7B1C8937F9008FC71B /* HeaderViewModel.h */,
+				46FBBA7C1C8937F9008FC71B /* HeaderViewModel.m */,
+			);
+			name = DetailHeaderViewModel;
+			path = HeaderViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -823,6 +869,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46FBBA711C89162F008FC71B /* NSString+ChangeHtmlString.m in Sources */,
 				46C238761C86B2FE00204CB9 /* AFURLSessionManager.m in Sources */,
 				46C238901C86B2FE00204CB9 /* MJRefreshBackGifFooter.m in Sources */,
 				46C2388C1C86B2FE00204CB9 /* MJRefreshHeader.m in Sources */,
@@ -834,6 +881,7 @@
 				46C238701C86B2FE00204CB9 /* AFHTTPSessionManager.m in Sources */,
 				46FB113C1C87C68A00D9D5A9 /* UIImageView+SDWedImage.m in Sources */,
 				46C2388D1C86B2FE00204CB9 /* MJRefreshAutoGifFooter.m in Sources */,
+				46FBBA7D1C8937FA008FC71B /* HeaderViewModel.m in Sources */,
 				46C238961C86B2FE00204CB9 /* DIYMJRefreshBackGifFooter.m in Sources */,
 				46C238AB1C86B2FE00204CB9 /* UIImageView+WebCache.m in Sources */,
 				46C238951C86B2FE00204CB9 /* MJRefreshStateHeader.m in Sources */,
@@ -901,8 +949,10 @@
 				46C238A41C86B2FE00204CB9 /* SDWebImageManager.m in Sources */,
 				46C2389D1C86B2FE00204CB9 /* MKAnnotationView+WebCache.m in Sources */,
 				46C238A61C86B2FE00204CB9 /* UIButton+WebCache.m in Sources */,
+				46FBBA831C8947E4008FC71B /* DetailHeaderView.m in Sources */,
 				46C2387C1C86B2FE00204CB9 /* MASViewConstraint.m in Sources */,
 				46C238741C86B2FE00204CB9 /* AFURLRequestSerialization.m in Sources */,
+				46FBBA751C89188D008FC71B /* DetailVC.m in Sources */,
 				46C2387D1C86B2FE00204CB9 /* NSArray+MASAdditions.m in Sources */,
 				46C238A11C86B2FE00204CB9 /* SDWebImageDecoder.m in Sources */,
 				46C238A31C86B2FE00204CB9 /* SDWebImageDownloaderOperation.m in Sources */,

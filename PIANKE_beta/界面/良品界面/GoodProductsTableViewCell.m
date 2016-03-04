@@ -18,6 +18,8 @@
                 reuseIdentifier:reuseIdentifier];
     if (self) {
         
+//        [self setBackgroundColor:[UIColor whiteColor]];
+//        [self.contentView setBackgroundColor:[UIColor whiteColor]];
         [self.contentView addSubview:self.coverimgView];
         [self.contentView addSubview:self.titleLab];
         [self.contentView addSubview:self.buyBtn];
@@ -86,7 +88,7 @@
         _buyBtn = [[UIButton alloc] initWithFrame:CGRectMake( self.frame.size.width, 165, 65, 25)];
         [_buyBtn setTitle:@"购买" forState:UIControlStateNormal];
         [_buyBtn.titleLabel setFont:[UIFont systemFontOfSize:15]];
-        _buyBtn.backgroundColor = [UIColor grayColor];
+        _buyBtn.backgroundColor = [UIColor brownColor];
         _buyBtn.clipsToBounds = YES;
         _buyBtn.layer.cornerRadius = 7;
     }

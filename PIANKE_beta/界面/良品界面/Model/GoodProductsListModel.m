@@ -24,7 +24,7 @@
         if (! [dictionary [@"contentid"] isKindOfClass:[NSNull class]]) {
             
             
-            self.contentid = dictionary [@"contendid"];
+            self.contentid = dictionary [@"contentid"];
         }
         
         if (! [dictionary [@"coverimg"] isKindOfClass:[NSNull class]]) {
